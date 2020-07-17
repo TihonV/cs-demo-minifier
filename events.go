@@ -47,7 +47,7 @@ var EventHandlers eventHandlers
 
 type eventHandlers struct {
 	Default defaultEventHandlers
-	Extra   extraEventHandlers
+	Extra   ExtraEventHandlers
 }
 
 type defaultEventHandlers struct{}
@@ -219,13 +219,13 @@ func (defaultEventHandlers) RegisterGrenadeEvents(ec *EventCollector) {
 	})
 }
 
-type extraEventHandlers struct{}
+type ExtraEventHandlers struct{}
 
-func (extraEventHandlers) RegisterAll(ec *EventCollector) {
+func (ExtraEventHandlers) RegisterAll(ec *EventCollector) {
 	EventHandlers.Extra.RegisterFootstep(ec)
 }
 
-func (extraEventHandlers) RegisterFootstep(ec *EventCollector) {
+func (ExtraEventHandlers) RegisterFootstep(ec *EventCollector) {
 	ec.AddHandler(func(e events.Footstep) {
 		ec.AddEvent(createEntityEvent(rep.EventFootstep, e.Player.EntityID))
 	})
