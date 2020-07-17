@@ -55,10 +55,11 @@ type Header struct {
 
 // Entity holds players & NPCs
 type Entity struct {
-	ID    int    `json:"id" msgpack:"id"`
-	Name  string `json:"name" msgpack:"name"`
-	Team  int    `json:"team" msgpack:"team"`
-	IsNpc bool   `json:"isNpc,omitempty" msgpack:"isNpc,omitempty"`
+	ID      int    `json:"id" msgpack:"id"`
+	SteamID uint64 `json:"steamId" msgpack:"steamId"`
+	Name    string `json:"name" msgpack:"name"`
+	Team    int    `json:"team" msgpack:"team"`
+	IsNpc   bool   `json:"isNpc,omitempty" msgpack:"isNpc,omitempty"`
 }
 
 // Snapshot contains state changes since the last snapshot

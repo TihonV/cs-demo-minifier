@@ -21,10 +21,11 @@ func GetNonDefaultReplay() rep.Replay {
 func init() {
 	var ent []rep.Entity
 	ent = append(ent, rep.Entity{
-		ID:    5,
-		IsNpc: true,
-		Name:  "Batman",
-		Team:  2,
+		ID:      5,
+		SteamID: 76561198067150633,
+		IsNpc:   true,
+		Name:    "Batman",
+		Team:    2,
 	})
 
 	var pos []rep.Point

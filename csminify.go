@@ -199,10 +199,11 @@ func (m *minifier) updateKnownPlayers() {
 		if pl.EntityID != 0 {
 			if _, alreadyKnown := m.knownPlayerEntityIDs[pl.EntityID]; !alreadyKnown {
 				ent := rep.Entity{
-					ID:    pl.EntityID,
-					Team:  int(pl.Team),
-					Name:  pl.Name,
-					IsNpc: pl.IsBot,
+					ID:      pl.EntityID,
+					SteamID: pl.SteamID64,
+					Team:    int(pl.Team),
+					Name:    pl.Name,
+					IsNpc:   pl.IsBot,
 				}
 
 				m.replay.Entities = append(m.replay.Entities, ent)
